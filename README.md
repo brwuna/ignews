@@ -28,6 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - NextJS
 - ReactJS
 - TypeScript
+- SASS
 - Stripe
 - FaunaDB
 - NextAuth.js
