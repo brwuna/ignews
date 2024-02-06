@@ -56,9 +56,7 @@ export default function PostPreview({ post }: PostPreviewProps ) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
-        paths: [
-            { params: { slug: 'react-hooks-como-utilizar-motivacoes-e-exemplos-praticos' } }
-        ],
+        paths: [],
         fallback: 'blocking'
     }
 }
