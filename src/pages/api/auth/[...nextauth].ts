@@ -93,11 +93,11 @@ export default NextAuth({
   //   },
   // }
   callbacks: {
-      async session({ session }) {
+      async session({ session, user: nextAuthUser }) {
         // Busca o user pelo email
         const { data: user } = await supabase
           .from("users")
-          .select("id, stripe_customer_id")
+          .select("id")
           .eq("email", session.user!.email)
           .single();
 
@@ -109,7 +109,7 @@ export default NextAuth({
         const { data: subscription } = await supabase
           .from("subscriptions")
           .select("*")
-          .eq("customer_id", user.stripe_customer_id)
+          .eq("user_id", user.id)
           .eq("status", "active")
           .single();
 
